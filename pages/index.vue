@@ -454,22 +454,6 @@ export default {
     }
   },
   methods: {
-    async getCEP() {
-      await this.$axios.$get('https://viacep.com.br/ws/' + this.cep + '/json/', {
-        headers: {
-          'Access-Control-Allow-Origin': 'http://localhost:51000/',
-          'Access-Control-Request-Method': 'GET',
-          Accept: '*'
-        }
-      }).then((response) => {
-        // console.log(response)
-        this.endereco = response.logradouro
-        this.complement = response.complemento
-        this.city = response.localidade
-        this.state = response.uf
-        this.district = response.bairro
-      }).catch()
-    },
 
     tabelamento() {
       //x^3 - 9x +5
